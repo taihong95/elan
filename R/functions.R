@@ -13,7 +13,7 @@ elanTree <- function(fname) {
 #' @importFrom XML xmlGetAttr
 processTimeSlot <- function(node) {
     data.frame(tsid=XML::xmlGetAttr(node, "TIME_SLOT_ID"),
-               tstime=as.numeric(XML::xmlGetAttr(node, "TIME_VALUE"),"NA"),
+               tstime=as.numeric(XML::xmlGetAttr(node, "TIME_VALUE","NA")),
                stringsAsFactors=FALSE)
 }
 
